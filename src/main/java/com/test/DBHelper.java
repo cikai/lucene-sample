@@ -9,10 +9,10 @@ import java.sql.SQLException;
  * Created by cikai on 2017/4/11.
  */
 public class DBHelper {
-    public static final String url = "jdbc:mysql://127.0.0.1:3306/test";
+    public static final String url = "jdbc:mysql://host:port/database";
     public static final String name = "com.mysql.jdbc.Driver";
-    public static final String user = "***";
-    public static final String password = "***";
+    public static final String user = "username";
+    public static final String password = "password";
 
     public Connection conn = null;
     public PreparedStatement pst = null;

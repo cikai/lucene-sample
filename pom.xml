@@ -7,42 +7,61 @@
   <groupId>com.test</groupId>
   <artifactId>lucene-sample</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <dependencies>
     <!-- lucene-core -->
     <dependency>
       <groupId>org.apache.lucene</groupId>
       <artifactId>lucene-core</artifactId>
-      <version>6.2.0</version>
+      <version>4.6.0</version>
     </dependency>
 
     <!-- lucene-analyzers-common -->
     <dependency>
       <groupId>org.apache.lucene</groupId>
       <artifactId>lucene-analyzers-common</artifactId>
-      <version>6.2.0</version>
+      <version>4.6.0</version>
     </dependency>
 
     <!-- lucene-queries -->
     <dependency>
       <groupId>org.apache.lucene</groupId>
       <artifactId>lucene-queries</artifactId>
-      <version>6.2.0</version>
+      <version>4.6.0</version>
+    </dependency>
+
+    <!-- lucene-queryparser -->
+    <dependency>
+      <groupId>org.apache.lucene</groupId>
+      <artifactId>lucene-queryparser</artifactId>
+      <version>4.6.0</version>
     </dependency>
 
     <!-- lucene-grouping -->
     <dependency>
       <groupId>org.apache.lucene</groupId>
       <artifactId>lucene-grouping</artifactId>
-      <version>6.2.0</version>
+      <version>4.6.0</version>
     </dependency>
 
-    <!-- ikanalyzer -->
+    <!-- ikanalyzer
     <dependency>
       <groupId>com.janeluo</groupId>
       <artifactId>ikanalyzer</artifactId>
       <version>2012_u6</version>
-    </dependency>
+    </dependency> -->
 
     <!-- mysql -->
     <dependency>
