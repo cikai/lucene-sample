@@ -1,5 +1,10 @@
 package com.test;
 
+import com.google.gson.Gson;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Created by cikai on 2017/4/11.
  */
@@ -103,4 +108,5 @@ public class Post {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
 }

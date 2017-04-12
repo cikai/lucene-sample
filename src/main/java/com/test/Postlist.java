@@ -19,7 +19,6 @@ public class Postlist {
         sql = "select * from t_topic where status = 1 order by uid asc";
         db = new DBHelper(sql);
         List postlist = new ArrayList();
-
         try {
             rs = db.pst.executeQuery();
             while (rs.next()) {

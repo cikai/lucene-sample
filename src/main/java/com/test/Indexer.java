@@ -30,8 +30,7 @@ public class Indexer {
                 Post post = new Gson().fromJson(object.toString(), Post.class);
                 document.add(new TextField("uid", post.getUid().toString(), Field.Store.YES));
                 document.add(new TextField("tid", post.getTid().toString(), Field.Store.YES));
-                document.add(new TextField("title", post.getTitle(), Field.Store.YES));
-                document.add(new TextField("content", post.getContent(), Field.Store.YES));
+                document.add(new TextField("title_content", post.getTitle() + " " + post.getContent(), Field.Store.YES));
                 indexWriter.addDocument(document);
             }
             indexWriter.close();

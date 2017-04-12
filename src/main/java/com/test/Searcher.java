@@ -29,12 +29,12 @@ public class Searcher {
                     .open(new File("E:\\lucene")));
             indexSearcher = new IndexSearcher(indexReader);
             Analyzer analyzer = new IKAnalyzer();
-            QueryParser queryParser = new QueryParser(Version.LUCENE_46, "title", analyzer);
+            QueryParser queryParser = new QueryParser(Version.LUCENE_46, "title_content", analyzer);
             Query query = queryParser.parse(str);
             TopDocs td = indexSearcher.search(query, 10000);
             for (int i = 0; i < td.totalHits; i++) {
                 Document document = indexSearcher.doc(td.scoreDocs[i].doc);
-                result.add(document.get("title"));
+                result.add(document.get("tid"));
             }
         } catch (org.apache.lucene.queryparser.classic.ParseException pe) {
             pe.printStackTrace();
