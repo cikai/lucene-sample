@@ -22,9 +22,13 @@ public class LuceneTest {
         ResultSet rs = null;
         Directory directory = null;
         try {
-            FileUtils fileUtils = new FileUtils();
-            fileUtils.delFolder("E:\\lucene");
-            directory = FSDirectory.open(new File("E:\\lucene"));
+            String os = System.getProperty("os.name");
+            if (os.toLowerCase().startsWith("win")) {
+                new FileUtils().delAllFile("/home/lucene-index");
+            } else {
+                Runtime.getRuntime().exec("rm -rf /home/lucene-index");
+            }
+            directory = FSDirectory.open(new File("/home/lucene-index"));
             Indexer indexer = new Indexer();
             indexer.createIndex(directory);
 

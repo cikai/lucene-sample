@@ -26,7 +26,7 @@ public class Searcher {
         try {
             IndexSearcher indexSearcher = null;
             IndexReader indexReader = DirectoryReader.open(FSDirectory
-                    .open(new File("E:\\lucene")));
+                    .open(new File("/home/lucene-index")));
             indexSearcher = new IndexSearcher(indexReader);
             Analyzer analyzer = new IKAnalyzer();
             QueryParser queryParser = new QueryParser(Version.LUCENE_46, "title_content", analyzer);
