@@ -27,7 +27,7 @@ public class Indexer {
             List postlist = new Postlist().getPostlist();
             for (Object object : postlist) {
                 Document document = new Document();
-                Post post = new Gson().fromJson(object.toString(), Post.class);
+                Post post = new Gson().fromJson(new Gson().toJson(object), Post.class);
                 document.add(new TextField("uid", post.getUid().toString(), Field.Store.YES));
                 document.add(new TextField("tid", post.getTid().toString(), Field.Store.YES));
                 document.add(new TextField("title_content", post.getTitle() + " " + post.getContent(), Field.Store.YES));
